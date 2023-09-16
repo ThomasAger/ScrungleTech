@@ -1,0 +1,45 @@
+/* 
+CodeMaster Zen's Refined Plan:
+
+1. The 'position: absolute' on the iframe means it's positioned relative to the nearest positioned ancestor. If no positioned ancestors exist, it's relative to the document body.
+2. The height of the iframe will be the total viewport height minus the height of the Patreon banner.
+3. The 'top: 0' ensures the iframe starts from the top of the page, and the calculated height ensures it stretches until just above the Patreon banner.
+
+By following this approach, the iframe should span the entire viewport height except for the space occupied by the Patreon banner.
+*/
+
+body {
+    background-color: #FFF;
+    color: #222;
+    margin: 0;
+    font-size: 16px;
+    height: 100vh;  /* Ensure body occupies the full viewport height */
+    overflow: hidden;  /* Prevent scroll on body since iframe will handle it */
+}
+
+#googleDocIframe {
+    width: 100%;
+    height: calc(100vh - 70px);  /* Subtracting the estimated height of the Patreon banner */
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow-y: scroll;  /* Ensure iframe content is scrollable */
+}
+
+#sacred-section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #E50914;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 2000;
+}
+
+#sacred-section a {
+    color: #FFF;
+    text-decoration: underline;
+}

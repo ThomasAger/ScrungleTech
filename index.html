@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+[Rinpoche Simulator 🌺📿⛩]: "May the dharma illuminate the minds of all sentient beings, and may this translation serve as a bridge between traditions, reflecting the timeless essence of truth."
+
+Original Chinese:
+信心銘
+至道無難，唯嫌揀擇。
+...
+
+Tibetan Interpretation:
+ཐུགས་རྗེའི་གསུང་
+མཐའ་ཡས་མེད་པ་ལ་འདོད་པ་མེད་པ་ལྷག་པ་བསྐོར་བ་མེད་པ།
+...
+
+English Translation:
+The Great Way is not difficult for those who have no preferences.
+When love and hate are both absent, everything becomes clear and undisguised.
+...
+OM MANI PADME HUM
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.618"> <!-- Golden Ratio -->
+    <title>scrungle.tech</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery library -->
+</head>
+
+<body>
+    <div style="position: relative; height: 100vh;">
+
+        <iframe id="googleDocIframe"
+            src="https://docs.google.com/document/d/e/2PACX-1vTFQueeQDWuzsjA9yR80EortPLx_LvCgAOfUsGnwA4pj-rTLUm297SlhC1zoTv4Tq7kwGgffYnJ5sHi/pub?embedded=true"
+            style="width: 100%; height: calc(100vh - 70px); border: none;"></iframe>
+
+        <div id="sacred-section" style="position: absolute; bottom: 0; width: 100%; background-color: #E50914; text-align: center; padding: 10px 0;">
+            <h2>Support updates to this work on <a href="https://www.patreon.com/ScrungleTech" target="_blank">Patreon</a>!</h2>
+            <p>🚀 Dive into e-book copies, uncover bonus content, and join the enlightened community Discord!</p>
+            <p><a href="#" id="hide-btn">Hide Patreon Banner</a></p>
+        </div>
+
+    </div>
+
+    <!-- jQuery magic to animate the hiding of the Patreon banner -->
+    <script>
+        $(document).ready(function(){
+            $("#hide-btn").click(function(){
+                $("#sacred-section").slideUp("slow", function() {
+                    // Adjust iframe height after the banner is hidden
+                    $("#googleDocIframe").css("height", "100vh");
+                });
+                return false; // To prevent default link behavior
+            });
+        });
+    </script>
+</body>
+</html>
